@@ -1,10 +1,18 @@
 <template lang="pug">
-  div#app
-    div.container
-      router-view
+  div#app.grey-text.text-lighten-2
+    div.container.main-content
+      h2
+        strong.red-text Dark Heresy 
+        | dice roller
+        span(v-if="$store.getters.name !== ''")  - {{ $store.getters.name }}
+      transition(name="fade" mode="out-in")
+        router-view
 </template>
 
 <style lang="stylus">
+html
+  font-family 'Jim Nightshade', cursive !important
+
 body
   display flex
   min-height 100vh
@@ -12,18 +20,6 @@ body
 
 main
   flex 1 0 auto
-
-::-webkit-scrollbar
-  width 17px
-
-::-webkit-scrollbar-track
-  background-color #333
-
-::-webkit-scrollbar-thumb
-  background-color #666666
-
-::-webkit-scrollbar-thumb:hover
-  background-color gray
 
 .fade-enter-active, .fade-leave-active
   transition opacity .3s
@@ -58,8 +54,47 @@ ul.circle > li
   height 75% !important
 
 div.main-content
-  font-size 1.5rem
+  font-size 1.8rem
+
+label
+  font-size 1.5rem !important
+
+input[type="text"]
+  font-size 2.5rem !important
 
 a
   cursor pointer
+
+h2.nmb
+  margin-bottom 0
+
+.loading
+  color gray
+
+.pl
+  margin-left 1rem
+
+#right
+  border-left 1px solid red
+
+.input-field input[type=text]:focus + label
+  color red !important
+
+.input-field input[type=text]:focus
+  border-bottom 1px solid red !important
+  box-shadow 0 1px 0 0 red !important
+
+.input-field input[type=text].valid
+  border-bottom 1px solid red !important
+  box-shadow 0 1px 0 0 red !important
+
+.input-field input[type=text].invalid
+  border-bottom 1px solid red !important
+  box-shadow 0 1px 0 0 red !important
+
+.input-field .prefix.active
+  color red !important
+
+.btn
+  width 100%
 </style>
