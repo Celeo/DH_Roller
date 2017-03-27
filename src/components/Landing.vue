@@ -4,7 +4,7 @@
     div.row
       div.col.s4
         div.input-field
-          input(v-model="name" type="text" id="name")
+          input(v-model="name" type="text" id="name" @keyup.enter="login")
           label(for="name") Enter your name
         button.btn.red(:class="{ disabled: name === '' }" @click="login") Enter
           i.material-icons.right send
