@@ -6,8 +6,8 @@
         div.input-field
           input(v-model="name" type="text" id="name")
           label(for="name") Enter your name
-    button.btn.red(:class="{ disabled: name === '' }" @click="login") Enter
-      i.material-icons.right send
+        button.btn.red(:class="{ disabled: name === '' }" @click="login") Enter
+          i.material-icons.right send
 </template>
 
 <script>
