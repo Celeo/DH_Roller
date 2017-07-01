@@ -12,8 +12,8 @@
           div(v-if="rolls.length > 0")
             div(v-for="roll in orderedRolls")
               span.grey-text.text-lighten-3
-                span {{ roll.user }} rolled a
-                span.red-text {{ roll.value }}
+                span {{ roll.user }} rolled a 
+                span.red-text {{ roll.value }} 
                 span at {{ roll.timestamp | dt }} on a d{{ roll.dice }}
           div(v-else)
             p No rolls have been made
