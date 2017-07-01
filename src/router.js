@@ -24,8 +24,7 @@ const router = new Router({
       path: '*',
       redirect: '/'
     }
-  ],
-  mode: 'history'
+  ]
 })
 
 router.beforeEach((to, from, next) => {
