@@ -7,6 +7,8 @@
         button.btn.red.darken-2(@click="roll(10)" v-bind:class="{ disabled: !initialDataLoaded }") 1d10
         br
         button.btn.red.darken-2(@click="roll(6)" v-bind:class="{ disabled: !initialDataLoaded }") 1d6
+        br
+        button.btn.red.darken-2(@click="roll(6)" v-bind:class="{ disabled: !initialDataLoaded }") 1d5
       div.col.m10#right
         div(v-if="initialDataLoaded")
           div(v-if="rolls.length > 0")
