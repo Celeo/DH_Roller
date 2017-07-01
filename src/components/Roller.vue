@@ -14,9 +14,9 @@
           div(v-if="rolls.length > 0")
             div(v-for="roll in orderedRolls")
               span.grey-text.text-lighten-3
-                span {{ roll.user }} rolled a 
+                span(v-bind:class="{ 'yellow-text text-darken-2': roll.user === name }") {{ roll.user }} rolled a 
                 span.red-text {{ roll.value }} 
-                span at {{ roll.timestamp | dt }} on a d{{ roll.dice }}
+                span(v-bind:class="{ 'yellow-text text-darken-2': roll.user === name }") at {{ roll.timestamp | dt }} on a d{{ roll.dice }}
           div(v-else)
             p No rolls have been made
         p.loading.pl(v-else) Loading data ...
@@ -45,12 +45,15 @@ export default {
   computed: {
     orderedRolls() {
       return this.rolls.sort((a, b) => b.timestamp - a.timestamp)
+    },
+    name() {
+      return this.$store.getters.name
     }
   },
   methods: {
     roll(max) {
       const roll = {
-        user: this.$store.getters.name,
+        user: this.name,
         value: getRoll(max),
         dice: max,
         timestamp: parseInt(moment().format('x'))
