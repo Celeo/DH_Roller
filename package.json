@@ -10,10 +10,10 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
+    "crypto-rand": "^0.0.2",
     "firebase": "^3.7.2",
     "materialize-css": "^0.98.0",
     "moment": "^2.18.1",
-    "secure-random": "^1.1.1",
     "vue": "^2.2.2",
     "vue-router": "^2.3.0",
     "vuefire": "^1.4.0",
